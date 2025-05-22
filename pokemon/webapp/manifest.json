@@ -1,0 +1,98 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "pokemon",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.0",
+      "toolsId": "0e168c42-4770-4e21-8547-d53a82956bbc"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.136.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "pokemon.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "pokemon.view",
+        "async": true,
+        "viewPath": "pokemon.view"
+      },
+      "routes": [
+        {
+          "name": "RoutePokemon",
+          "pattern": ":?query:",
+          "target": [
+            "TargetPokemon"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetPokemon": {
+          "id": "Pokemon",
+          "name": "Pokemon"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "pokemon.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

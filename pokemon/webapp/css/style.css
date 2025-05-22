@@ -1,0 +1,9 @@
+/* Enter your custom styles here */
+
+.sapMLabel  {
+  color: tomato;
+}
+
+.sapMLabel .sapMLabelTextWrapper {
+  padding-left: 40px;
+}
